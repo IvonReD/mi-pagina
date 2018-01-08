@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*-----Grid System-----*/
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 8.3%);
+  grid-template-areas: "header header"
+                       "secc-1 secc-1"
+                       "secc-2 secc-2"
+                       "secc-3 secc-3"
+                       "footer footer";
+}
+
+[class*="secc-"]::after {
+  /* menciona que todas las clases que empiece con la letas col aplicacar los estilos*/
+  clear: both;
+}
+
+/*-----Grid Header-----*/
+
+.header {
+  grid-column: 1/13;
+  background: #373f5e;
+  height: 100px;
+  display: inline-block;
+}
+
+.header p {
+  float: left;
+  color: white;
+  margin: 36px 64px;
+}
+
+.header li {
+  float: right;
+  list-style: none;
+  color: white;
+  margin: 36px 9px;
+}
+
+.menu {
+  margin-right: 50px;
+}
+
+/*-----Grid Main (contenido)-----*/
+
+/*Seccion 1*/
+
+.secc-1 {
+  grid-column: 1/13;
+  background-image: url("../assets/images/codigo.jpg");
+  height: 400px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.secc-1 h1 {
+  text-align: center;
+  color: white;
+  margin-top: 80px;
+  font-size: 50px;
+}
+
+/*Seccion 2*/
+
+button[type="button"] {
+  padding: 8px 13px;
+  background-color: #0790f2;
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid #0790f2;
+}
+
+[class*="item-"] {
+  /* menciona que todas las clases que empiece con la letas col aplicacar los estilos*/
+  float: left;
+  margin: 2%;
+}
+
+.secc-2 {
+  grid-column: 2/12;
+  height: 400px;
+  margin-top: 100px;
+}
+
+.item-1 {
+  width: 580px;
+}
+
+.item-1 h2 {
+  text-align: center;
+}
+
+.item-1 p {
+  text-align: justify;
+}
+
+.item-2 {
+  width: 300px;
+  margin-left: 100px;
+}
+
+/*Seccion 3*/
+
+.secc-3 {
+  grid-column: 2/12;
+  height: 600px;
+}
+
+.item-3 p, .item-4 p, .item-5 p {
+  width: 300px;
+  text-align: justify;
+}
+
+.secc-3 img{
+  width: 300px;
+  height: 200px;
+}
+
+/*-----Grid Footer (barra institucional)-----*/
+
+.footer {
+  grid-column: 1/13;
+  background: #373f5e;
+  color: white;
+  height: 100px;
+}
+
+.footer p {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/*-----Medias Queries-----*/
+
+@media (max-width: 768px) {
+  .menu li {
+    display: none;
+  }
+  .menu ul {
+    background-image: url("../assets/images/menu.jpg");
+    background-repeat: no-repeat;
+    float: right;
+    margin: 26px 9px;
+    width: 50px;
+    background-size: 40px;
+    height: 40px;
+  }
+  .secc-1, .secc-2, .item-1, .item-2, .secc-3,
+  .item-3, .item-4, .item-5, .footer {
+    width: 100%;
+  }
+  .item-2{
+    margin: 0 auto;
+  }
+  .secc-2 {
+    height: 450px;
+  }
+  .secc-3 {
+    height: 1250px;
+  }
+}
