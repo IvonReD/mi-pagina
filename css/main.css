@@ -10,7 +10,7 @@
 .container {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(12, 8.3%);
+  grid-template-columns: repeat(12, 8.33%);
   grid-template-areas: "header header"
                        "secc-1 secc-1"
                        "secc-2 secc-2"
@@ -153,8 +153,9 @@ button[type="button"] {
     background-size: 40px;
     height: 40px;
   }
-  .secc-1, .secc-2, .item-1, .item-2, .secc-3,
-  .item-3, .item-4, .item-5, .footer {
+  .secc-2, .item-1, .item-2, .secc-3,
+  .item-3, .item-4, .item-5 {
+    grid-column: 4/10;
     width: 100%;
   }
   .item-2{
